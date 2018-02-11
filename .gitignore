@@ -1,0 +1,8 @@
+
+Graph/Debug
+*.vcxproj
+*.filters
+*.suo
+*.sdf
+*.opensdf
+*.sln
