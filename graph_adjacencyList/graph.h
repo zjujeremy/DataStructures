@@ -6,7 +6,7 @@ public:
 
 
 private:
-
+	vertex
 };
 
 
