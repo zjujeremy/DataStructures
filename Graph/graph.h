@@ -1,14 +1,15 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include "edge.h"
 #include "vertex.h"
 class graph{
 public:
-	graph(int _maxTertex);
+	graph(int _maxVertex=0, int _maxEdge=0);
 	~graph();
 
 	void addVertex(const vertex &);
-	void addEdge(const int row, const int col, const int value);
+	void addEdge(const edge &);
 	
 	void printAdjacencyMatrix();
 	void initVertexArray();
@@ -16,8 +17,8 @@ public:
 	void DepthFirstSearch(int init);
 	void BreadthFirstSearch(int init);
 
-private:
 	int maxVertex;
+	int maxEdge;
 	int preVertex;
 	vertex *vertexArray;
 	int *adjacencyMaxtrix;

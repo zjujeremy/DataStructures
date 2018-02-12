@@ -3,8 +3,9 @@
 #include "graph.h"
 using namespace std;
 
-graph::graph(int _maxTertex){
-	maxVertex = _maxTertex;
+graph::graph(int _maxVertex, int _maxEdge){
+	maxVertex = _maxVertex;
+	maxEdge = _maxEdge;
 	preVertex = 0;
 	vertexArray = new vertex[11];
 	adjacencyMaxtrix = new int[maxVertex*maxVertex];
@@ -26,9 +27,9 @@ void graph::addVertex(const vertex & _v){
 		cout << "out of bound" << endl;
 }
 
-void graph::addEdge(const int row, const int col, int _value){
-	adjacencyMaxtrix[row*maxVertex + col] = _value;
-	adjacencyMaxtrix[col*maxVertex + row] = _value;
+void graph::addEdge(const edge &e){
+	adjacencyMaxtrix[e.v1*maxVertex + e.v2] = e.value;
+	adjacencyMaxtrix[e.v2*maxVertex + e.v1] = e.value;
 }
 
 void graph::printAdjacencyMatrix(){
