@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 #include "graph.h"
 using namespace std;
 
@@ -44,12 +45,18 @@ void graph::printAdjacencyMatrix(){
 	}
 }
 
-void graph::DepthFirstSearch(int _i){
-	cout << "  " << vertexArray[_i].value;
-	vertexArray[_i].isVisited = true;
+void graph::initVertexArray(){
 	for (int i = 0; i < maxVertex; i++){
-		if (adjacencyMaxtrix[_i*maxVertex+i] != 0){
-			if (vertexArray[_i].isVisited == false)
+		vertexArray[i].isVisited = false;
+	}
+}
+
+void graph::DepthFirstSearch(int init){
+	cout << "  " << vertexArray[init].value;
+	vertexArray[init].isVisited = true;
+	for (int i = 0; i < maxVertex; i++){
+		if (adjacencyMaxtrix[init*maxVertex + i] != 0){
+			if (vertexArray[init].isVisited == false)
 				DepthFirstSearch(i);
 		}
 		else
@@ -57,6 +64,20 @@ void graph::DepthFirstSearch(int _i){
 	}
 }
 
-void graph::BreadthFirstSearch(){
-
+void graph::BreadthFirstSearch(int init){
+	queue<int> q;
+	cout << " " << vertexArray[init].value;
+	vertexArray[init].isVisited = true;
+	q.push(init);
+	while (!q.empty()){
+		int vert = q.front();
+		q.pop();
+		for (int i = 0; i < maxVertex; i++){
+			if (adjacencyMaxtrix[vert*maxVertex + i] != 0 && vertexArray[i].isVisited == false){
+				cout << " " << vertexArray[i].value;
+				vertexArray[init].isVisited = true;
+				q.push(i);
+			}
+		}
+	}
 }

@@ -11,9 +11,10 @@ public:
 	void addEdge(const int row, const int col, const int value);
 	
 	void printAdjacencyMatrix();
+	void initVertexArray();
 
-	void DepthFirstSearch(int _i);
-	void BreadthFirstSearch();
+	void DepthFirstSearch(int init);
+	void BreadthFirstSearch(int init);
 
 private:
 	int maxVertex;
@@ -21,8 +22,5 @@ private:
 	vertex *vertexArray;
 	int *adjacencyMaxtrix;
 };
-
-
-
 
 #endif

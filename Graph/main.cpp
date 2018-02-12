@@ -44,6 +44,8 @@ int main(){
 
 	gra->printAdjacencyMatrix();
 	gra->DepthFirstSearch(0);
+	gra->initVertexArray();
+	gra->BreadthFirstSearch(0);
 
 	return 0;
 }
