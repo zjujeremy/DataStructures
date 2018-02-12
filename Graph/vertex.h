@@ -3,7 +3,7 @@
 
 class vertex{
 public:
-	vertex(char data);
+	vertex(char data='0');
 	char value;
 	bool isVisited;
 };

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "graph.h"
 
 using namespace std;
@@ -42,10 +43,17 @@ int main(){
 	gra->addEdge(7, 9, 1);
 	gra->addEdge(8, 9, 1);
 
+	cout << "Adjacency Matrix: " << endl;
 	gra->printAdjacencyMatrix();
+
+	cout << "Depth First Search(DFS): " << endl;
 	gra->DepthFirstSearch(0);
+
 	gra->initVertexArray();
+
+	cout << "Breadth First Search(BFS): " << endl;
 	gra->BreadthFirstSearch(0);
 
+	system("pause");
 	return 0;
 }
