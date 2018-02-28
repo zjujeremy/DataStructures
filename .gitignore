@@ -1,11 +1,12 @@
 
 Graph/Debug
+Graph_adjacencyList/Debug
+MinimalSpanningTree/Debug
 *.vcxproj
 *.filters
 *.suo
 *.sdf
 *.opensdf
 *.sln
-Graph_adjacencyList/Debug
 *.exe
 *.log
