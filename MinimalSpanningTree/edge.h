@@ -14,5 +14,4 @@ public:
 	bool isSelected;
 };
 
-
 #endif

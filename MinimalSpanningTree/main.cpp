@@ -4,7 +4,6 @@
 #include "graph.h"
 
 using namespace std;
-
 int main(){
 	ifstream in("./data.dat", ios::in);
 	int nv, ne;
@@ -22,7 +21,11 @@ int main(){
 		g.addEdge(s, e, v);
 	}
 
-	g.prim(0);
+	// prim algorithm below
+	//g.prim(0);
+
+	// kruskal algorithm below
+	g.kruskal();
 
 	in.close();
 	system("pause");

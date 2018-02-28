@@ -6,10 +6,12 @@ public:
 	vertex(char n=0){
 		name = n;
 		isVisited = false;
+		
 	}
 	char name;
 	bool isVisited;
-};
 
+	//for kruskal algorithm
+};
 
 #endif
